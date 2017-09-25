@@ -1,20 +1,17 @@
 <template>
   <div class="event-tab">
-    <el-tabs v-model="activeName2" type="card" @tab-click="handleClick" class="event-tab-content">
-      <el-tab-pane label="未处理" name="first" class="event-tab-content">
-        <div class="event-tab-content1">
+    <el-tabs type="card" @tab-click="handleClick">
+      <el-tab-pane>
+        <span slot="label"><span class="event-tab-undealed">{{this.eventNum.undealed}}</span> 未处理</span>
           <TableData :tableData1="unDealedData"></TableData>
-        </div>
       </el-tab-pane>
-      <el-tab-pane label="处理中" name="second" class="event-tab-content">
-        <div class="event-tab-content1">
+      <el-tab-pane>
+        <span slot="label"><span class="event-tab-dealed">{{this.eventNum.dealed}}</span> 处理中</span>
           <TableData :tableData1="dealedData"></TableData>
-        </div>
       </el-tab-pane>
-      <el-tab-pane label="今日已处理" name="third" class="event-tab-content">
-        <div class="event-tab-content1">
+      <el-tab-pane>
+        <span slot="label"><span class="event-tab-dealedToday">{{this.eventNum.dealedToday}}</span> 今日已处理</span>
           <TableData :tableData1="dealedDataToday"></TableData>
-        </div>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -30,7 +27,11 @@
     name: 'EventsTabs',
     data () {
       return {
-        activeName2: 'first',
+          eventNum:{
+            undealed:3,
+            dealed:7,
+            dealedToday:21
+          },
         unDealedData: [{
           level: '事故',
           level_class: {accident: true},
@@ -123,6 +124,22 @@
     width: 100%;
     height: 100%;
   }
+  .event-tab-undealed {
+      font-size: 30px;
+      line-height: 40px;
+      color: rgb(255, 60, 28);
+  }
+  .event-tab-dealed {
+      font-size: 30px;
+      line-height: 40px;
+      color: rgb(255, 186, 0);
+  }
+  .event-tab-dealedToday {
+      font-size: 30px;
+      line-height: 40px;
+      color: #70B931;
+  }
+
 
   .event-tab-content1 {
     width: calc(100% - 2px);
@@ -135,12 +152,22 @@
     box-shadow: 0px 2px 10px #ADADAD;
   }
 </style>
-<style>
+<style lang="scss">
   .event-tab .el-tabs__content {
     width: 100%;
     height: calc(100% - 42px);
   }
-
+  .event-tab>.el-tabs.el-tabs--card {
+      width: 100%;
+      height: 100%;
+  }
+  .event-tab>.el-tabs.el-tabs--card>.el-tabs__header{
+      height: 40px;
+  }
+  .event-tab>.el-tabs.el-tabs--card>.el-tabs__content>.el-tab-pane {
+      width: 100%;
+      height: 100%;
+  }
   .event-tab-content.el-tabs.el-tabs--card {
     height: 100%;
     width: 100%;

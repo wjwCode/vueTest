@@ -6,7 +6,7 @@
       </li>
       <li>
         <div>
-          <PicButton size="medium" name="confirm"></PicButton>
+          <PicButton size="medium" name="npm"></PicButton>
           <PicButton size="medium" name="cancel"></PicButton>
         </div>
         <div style="clear: both;"></div>

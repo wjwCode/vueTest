@@ -62,7 +62,7 @@
         </div>
         <PicButton size="medium" name="delete" style="float: left"></PicButton>
         <div style="float: right;">
-          <PicButton size="medium" name="close" style="float: left;"></PicButton>
+          <PicButton size="medium" name="modify" style="float: left;"></PicButton>
           <PicButton size="medium" name="close" style="float: left;"></PicButton>
         </div>
         <div style="clear: both;"></div>

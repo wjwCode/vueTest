@@ -7,7 +7,7 @@
       <li>
         <PicButton size="medium" name="delete"></PicButton>
         <div>
-          <PicButton size="medium" name="close"></PicButton>
+          <PicButton size="medium" name="modify"></PicButton>
           <PicButton size="medium" name="close"></PicButton>
         </div>
         <div style="clear: both;"></div>
